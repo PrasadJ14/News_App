@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.prasad.newsapp.models.NewsHeadlines;
 import com.squareup.picasso.Picasso;
 
@@ -14,6 +16,8 @@ public class DetailsActivity extends AppCompatActivity {
     NewsHeadlines headlines;
     TextView txt_title, txt_author, txt_time, txt_detail, txt_content;
     ImageView img_news;
+    LinearLayout news;
+    ShimmerFrameLayout shimmer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,13 @@ public class DetailsActivity extends AppCompatActivity {
         txt_detail = findViewById(R.id.text_detail_detail);
         txt_content = findViewById(R.id.text_detail_content);
         img_news = findViewById(R.id.img_detail_news);
+
+        shimmer = findViewById(R.id.shimmer);
+        news = findViewById(R.id.newLayout);
+
+        shimmer.startShimmer();
+
+
 
         headlines = (NewsHeadlines) getIntent().getSerializableExtra("data");
 

@@ -7,12 +7,64 @@
     app:cardElevation="8dp"
     android:layout_margin="8dp">
 
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="6dp"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_margin="8dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:maxLines="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_500"
+                    android:maxLines="1"
+                    android:layout_marginTop="6dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/not_available"
+                android:scaleType="centerCrop"/>
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <LinearLayout
+        android:id="@+id/newsListlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_margin="6dp"
-        android:weightSum="3">
+        android:weightSum="3"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="0dp"
